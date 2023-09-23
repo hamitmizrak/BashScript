@@ -16,11 +16,11 @@ DOKCER_PULL="Docker Pulling"
 # Updated
 sleep 2
 echo -e "\n### ${UPDATED} ###"
-read -p "Güncelleme istiyor musunuz  E/H ?" updatedResult
+read -p "Güncelleme istiyor musunuz  E/H ? " updatedResult
 if [[ $updatedResult == "E" || $updatedResult == "e"  ]]
 then
     echo -e "Güncelleme Başlandı... "  
-    sudo apt-get update && sudoa apt-get upgrade -y
+    sudo apt-get update && sudo  apt-get upgrade -y
 else
      echo -e "apt-get Update List Güncelleme Yapılmadı!!!\n "   
 fi
@@ -29,7 +29,7 @@ fi
 # Common
 sleep 2
 echo -e "\n### ${COMMONINFORMATION} ###"
-read -p "Genel Bilgiler istiyor musunuz  E/H ?" commonResult
+read -p "Genel Bilgiler istiyor musunuz  E/H ? " commonResult
 if [[ $commonResult == "E" || $commonResult == "e"  ]]
 then
     echo -e "Genel Bilgiler Başlandı... "  
@@ -108,7 +108,7 @@ fi
 # Docker Login
 sleep 2
 echo -e "\n### ${LOGIN} ###"
-echo -e "\nDockerHub'a Giriş yapmak istiyor musunuz ? E/H" loginResult
+echo -e "\nDockerHub'a Giriş yapmak istiyor musunuz ? E/H " loginResult
 if [[ $loginResult == "E" || $loginResult == "e"  ]]
 then
     echo -e "Docker Login ... "  
@@ -120,7 +120,7 @@ fi
 # Docker Login
 sleep 2
 echo -e "\n### ${LOGOUT} ###"
-echo -e "\nDockerHub'a Çıkış yapmak istiyor musunuz ? E/H" logoutResult
+echo -e "\nDockerHub'a Çıkış yapmak istiyor musunuz ? E/H " logoutResult
 if [[ $logoutResult == "E" || $logoutResult == "e"  ]]
 then
     echo -e "Docker Logout ... "  
@@ -133,7 +133,7 @@ fi
 # Docker Pull
 sleep 2
 echo -e "\n### ${DOKCER_PULL} ###"
-echo -e "\nDockerHub'a Pull yapmak istiyor musunuz ? E/H" pullingResult
+echo -e "\nDockerHub'a Pull yapmak istiyor musunuz ? E/H " pullingResult
 if [[ $pullingResult == "E" || $pullingResult == "e"  ]]
 then
     echo -e "Docker Pulling ... "  
@@ -147,24 +147,11 @@ else
      echo -e "Docker Pulling yapılmadı Yapılmadı!!!\n "   
 fi
 
-# Temizleme
-sleep 2
-echo -e "\n### ${CLEANER} ###"
-echo -e "\nSistem Temizliği istiyor musunuz ? E/H" cleanResult
-if [[ $cleanResult == "E" || $cleanResult == "e"  ]]
-then
-    echo -e "Temizlik Başlandı... "  
-    sudo apt-get clean
-    sudo apt-get autoremove -y
-else
-     echo -e "Temizlik Yapılmadı!!!\n "   
-fi
-
 
 # SİLMEK
 sleep 2
 echo -e "\n### ${DELETED} ###"
-echo -e "\nMAven Dosyasını Silmek istiyor musunuz ? E/H" deletedResult
+echo -e "\nMAven Dosyasını Silmek istiyor musunuz ? E/H " deletedResult
 if [[ $deletedResult == "E" || $deletedResult == "e"  ]]
 then
     echo -e "Temizlik Başlandı... "
@@ -174,3 +161,21 @@ then
 else
      echo -e "Temizlik Yapılmadı!!!\n "   
 fi
+
+# Temizlik
+sleep 2
+echo -e "\n######  Cache Temizleme  ######"
+read -p  "Cache Temizleme istiyor musunuz? E / H " cleanResult
+if [[ $cleanResult == "E"  ||  $cleanResult == "e" ]]
+then
+	echo   -e "\n######"  $CLEANER "######"
+	echo -e "Temizlik Başlandı... "  
+    sudo apt-get clean
+    sudo apt-get autoremove -y
+else 
+    echo -e "Temizlik Yapılmadı!!!\n "    
+fi
+
+
+sleep 2
+echo -e "\n######  BİTTİ ######"
