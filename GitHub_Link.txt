@@ -1,1 +1,1 @@
-https://github.com/hamitmizrak/BashScript
+https://github.com/hamitmizrak/BashScript 
