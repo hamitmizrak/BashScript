@@ -88,6 +88,8 @@ then
      sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
      sudo systemctl status docker
+     sleep 2
+     q
      sudo systemctl enable --now docker 
      sudo systemctl start docker
      # sudo systemctl status docker

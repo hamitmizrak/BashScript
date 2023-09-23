@@ -56,6 +56,8 @@ then
 	echo -e "Temizlik Başlandı... "  
     sudo apt-get clean
     sudo apt-get autoremove -y
+    echo -e "Bağımlılıklar Yükleniyor"
+    sudo apt install –f 
 else 
     echo -e "Temizlik Yapılmadı!!!\n "    
 fi
@@ -68,27 +70,23 @@ if [[ $versionResult == "E"  ||  $versionResult == "e" ]]
 then
 	echo   -e "\n###### Versionlar ######"
     pwd
-    sleep 2
+        sleep 2
     which mvn
     mvn -v
-    sleep 2
+        sleep 2
     which java
     java --version
-    sleep 2
+        sleep 2
     which docker
     docker version
-    sleep 2
+        sleep 2
     git version
     node -v 
-    sleep 2
+        sleep 2
     npm -v
-    sleep 2
+        sleep 2
     curl --version
-    sleep 2
-    sleep 2
-    sleep 2
-    sleep 2
-    sleep 2
+        sleep 2
 else 
     echo -e "Temizlik Yapılmadı!!!\n "    
 fi

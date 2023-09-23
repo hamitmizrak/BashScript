@@ -19,13 +19,15 @@ echo -e "\n### ${CHMOD} ###"
 read -p "Dosyalara izin vermek istiyor musunuz  E/H ? " chmodResult
 if [[ $chmodResult == "E" || $chmodResult == "e"  ]]
 then
-    echo -e "Yetkilendirme Başlandı... "  
+   echo -e "Yetkilendirme Başlandı... "  
    sudo chmod +x _1_common.sh
    sudo chmod +x _2_git.sh
    sudo chmod +x _3_vs_code.sh
    sudo chmod +x _4_JDK.sh
    sudo chmod +x _5_Maven.sh
    sudo chmod +x _6_Docker.sh
+   sudo chmod +x _7_AllVersion.sh
+   echo -e "Çalıştırmak ./_1_common.sh"  
 else
      echo -e "apt-get Update List Güncelleme Yapılmadı!!!\n "   
 fi
