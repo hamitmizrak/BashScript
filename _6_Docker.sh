@@ -1,5 +1,5 @@
 #! /bin/bash
-echo "VS CODE"
+echo "DOCKER"
 
 # User Variable
 UPDATED="Güncelleme"
@@ -90,7 +90,7 @@ then
      sudo systemctl status docker
      sudo systemctl enable --now docker 
      sudo systemctl start docker
-     sudo systemctl status docker
+     # sudo systemctl status docker
 
      ### kullanıcı adınızı docker grubuna ekle
      sudo usermod -aG docker ${USER}
@@ -117,7 +117,7 @@ else
      echo -e "Docker Login yapılmadı Yapılmadı!!!\n "   
 fi
 
-# Docker Login
+# Docker Logout
 sleep 2
 echo -e "\n### ${LOGOUT} ###"
 echo -e "\nDockerHub'a Çıkış yapmak istiyor musunuz ? E/H " logoutResult
