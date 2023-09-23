@@ -1,5 +1,6 @@
 #! /bin/bash
-echo "VS CODE"
+echo "MAVEN"
+
 
 # User Variable
 UPDATED="Güncelleme"
@@ -43,6 +44,23 @@ else
      echo -e "Genel Bilgiler Gösterilmediı!!!\n "   
 fi
 
+# Maven deleted
+sleep 2
+read -p "Maven Silmek istiyor musunuz  E/H ? " deletedResult
+if [[ $deletedResult == "E" || $deletedResult == "e"  ]]
+then
+    echo -e "Güncelleme Başlandı... "  
+    echo -e "Temizlik Başlandı... "
+    sudo apt-get clean
+    sudo apt-get autoremove -y
+    sudo apt-get purge maven
+    sudo apt-get purge maven
+    sudo rm -f apache-maven-3.6.3-bin.tar.gz
+    sudo apt-get update && sudo  apt-get upgrade -y
+else
+     echo -e "apt-get Update List Güncelleme Yapılmadı!!!\n "   
+fi
+
 # MAVEN
 sleep 2
 echo   -e "\n###### MAVEN ######"
@@ -56,43 +74,32 @@ then
 	which java
 	which git
 	sudo apt-get update
-	java -version
-     javac -version
+     echo   -e "\n###### JAVA VERSION ######"
+	java --version
+     javac --version
+     #sudo su
 
-     cd /usr/local 
-     sudo wget https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-     sudo tar xzf apache-maven-3.6.3-bin.tar.gz 
-     sudo ln -s apache-maven-3.6.3 maven
+     sudo apt install maven
 
-
-echo -e "#Java Home\nJAVA_HOME=\"/usr/lib/jvm/java-11-openjdk-amd64/bin/\" " >> ~/.bashrc 
-sudo vi /etc/profile.d/maven.sh
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 export M2_HOME=/usr/local/maven 
-export MAVEN_HOME=/usr/local/maven export PATH=${M2_HOME}/bin:${PATH}
-
-esc
-:wq
-source /etc/profile.d/maven.sh
-mvn -version
-
-
+     #cd /usr/local 
+     #sudo wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+     #sudo tar xzf apache-maven-3.6.3-bin.tar.gz 
+     #sudo ln -s apache-maven-3.6.3 maven
+     #JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+     #M2_HOME=/usr/local/maven
+     #MAVEN_HOME=/usr/local/maven
+     #PATH=${M2_HOME}/bin:${PATH}
+     #sudo rm -rf /etc/profile.d/maven.sh
+     #echo -e "#Maven Home\n export" ${JAVA_HOME}\n" | sudo tee --append /etc/profile.d/maven.sh
+     #echo -e "export" ${M2_HOME}\n" | sudo tee --append /etc/profile.d/maven.sh
+     #echo -e "export" ${MAVEN_HOME}\n" | sudo tee --append /etc/profile.d/maven.sh
+     #echo -e "export" ${PATH}\n" | sudo tee --append /etc/profile.d/maven.sh
+     #sudo source /etc/profile.d/maven.sh
+     echo   -e "\n###### MAVEN VERSION ######"
+     mvn -version
 else 
     echo -e "Maven Güncelleme Yapılmadı!!!\n "
 fi 
-
-# SİLMEK
-sleep 2
-echo -e "\n### ${DELETED} ###"
-echo -e "\nMAven Dosyasını Silmek istiyor musunuz ? E/H " deletedResult
-if [[ $deletedResult == "E" || $deletedResult == "e"  ]]
-then
-    echo -e "Temizlik Başlandı... "
-    sudo rm -f apache-maven-3.6.3-bin.tar.gz
-    sudo apt-get clean
-    sudo apt-get autoremove -y
-else
-     echo -e "Temizlik Yapılmadı!!!\n "   
-fi
 
 
 # Temizlik

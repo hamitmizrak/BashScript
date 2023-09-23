@@ -56,8 +56,8 @@ then
 	which java
 	which git
 	sudo apt-get update
-	java -version
-     javac -version
+	java --version
+     javac --version
 	sudo apt install openjdk-11-jdk -y
 	sudo add-apt-repository ppa:openjdk-r/ppa -y
 	# JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"             
@@ -73,21 +73,8 @@ else
     echo -e "Java Güncelleme Yapılmadı!!!\n "    
 fi 
 
-# Temizleme
-sleep 2
-echo -e "\n### ${CLEANER} ###"
-echo -e "\nSistem Temizliği istiyor musunuz ? E/H " cleanResult
-if [[ $cleanResult == "E" || $cleanResult == "e"  ]]
-then
-    echo -e "Temizlik Başlandı... "  
-    sudo apt-get clean
-    sudo apt-get autoremove -y
-else
-     echo -e "Temizlik Yapılmadı!!!\n "   
-fi
 
-
-# Temizleme
+# TemizleSilmeme
 sleep 2
 echo -e "\n### ${DELETED} ###"
 echo -e "\nJava'yı Silmek istiyor musunuz ? E/H " deletedResult
@@ -101,7 +88,7 @@ then
     sudo apt-get clean
     sudo apt-get autoremove -y
 else
-     echo -e "Temizlik Yapılmadı!!!\n "   
+     echo -e "Java Silme Yapılmadı!!!\n "   
 fi
 
 # Temizlik
@@ -114,6 +101,7 @@ then
 	echo -e "Temizlik Başlandı... "  
     sudo apt-get clean
     sudo apt-get autoremove -y
+    java --version
 else 
     echo -e "Temizlik Yapılmadı!!!\n "    
 fi
