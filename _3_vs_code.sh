@@ -51,6 +51,9 @@ if [[ $installingResult == "E" || $installingResult == "e"  ]]
 then
      echo -e "Yükleme Başlandı... "
      sudo snap install code --classic
+     sleep 1
+     echo -e "Bağımlılıklar Yükleniyor"
+     sudo apt install –f 
      sudo mkdir frontend
      cd frontend
      code .

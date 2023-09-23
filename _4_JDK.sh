@@ -69,12 +69,15 @@ then
 	echo   -e "\n######"  "java" $VERSION  "######"
 	java -version
      javac -version
+     sleep 1
+     echo -e "Bağımlılıklar Yükleniyor"
+     sudo apt install –f 
 else 
     echo -e "Java Güncelleme Yapılmadı!!!\n "    
 fi 
 
 
-# TemizleSilmeme
+#  Silme
 sleep 2
 echo -e "\n### ${DELETED} ###"
 echo -e "\nJava'yı Silmek istiyor musunuz ? E/H " deletedResult

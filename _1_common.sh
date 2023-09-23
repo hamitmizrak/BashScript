@@ -50,12 +50,27 @@ read -p "Genel Bilgiler istiyor musunuz  E/H ? " commonResult
 if [[ $commonResult == "E" || $commonResult == "e"  ]]
 then
     echo -e "Genel Bilgiler Başlandı... "  
+        sleep 1
     echo -e "Ben Kimim ... "  
     sudo whoami
+        sleep 1
+    echo -e "Linux Bilgileri ... "  
+    sudo uname
+        sleep 1
+    echo -e "Dağıtım Bilgileri ... "  
+    lsb_release -a    
+    echo -e "Disk Alanı ... "  
+    sudo df -m
+        sleep 1
+    echo -e "Cpu  ... "  
+    sudo cat /proc/cpuinfo
+        sleep 1
     echo -e "IP ... " 
     sudo ifconfig
+        sleep 1
     echo -e "Portlar ... " 
     sudo netstat -nlptu
+        sleep 1
     echo -e "Ram ... " 
     sudo free -m
 else
@@ -69,6 +84,7 @@ read -p "Yükleme istiyor musunuz  E/H ? " installingResult
 if [[ $installingResult == "E" || $installingResult == "e"  ]]
 then
     echo -e "Yükleme Başlandı... "
+    pwd 
     sudo apt-get install vim -y
     sudo apt-get install unrar -y 
     sudo apt-get install rar

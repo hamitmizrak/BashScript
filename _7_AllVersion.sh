@@ -67,6 +67,7 @@ read -p  "Versiyona bakmak istiyor musunuz? E / H " versionResult
 if [[ $versionResult == "E"  ||  $versionResult == "e" ]]
 then
 	echo   -e "\n###### Versionlar ######"
+    pwd
     sleep 2
     which mvn
     mvn -v
@@ -81,6 +82,13 @@ then
     node -v 
     sleep 2
     npm -v
+    sleep 2
+    curl --version
+    sleep 2
+    sleep 2
+    sleep 2
+    sleep 2
+    sleep 2
 else 
     echo -e "Temizlik Yapılmadı!!!\n "    
 fi

@@ -56,6 +56,9 @@ git version
 git config --global user.name "hamitmizrak"
 git config --global user.email "hamitmizrak@gmail.com"
 git config --global -l 
+sleep 1
+echo -e "Bağımlılıklar Yükleniyor"
+sudo apt install –f 
     
 else
      echo -e "Yükleme Yapılmadı!!!\n "   

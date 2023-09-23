@@ -100,6 +100,9 @@ then
      sudo apt-get install bash-completion 
      docker version
      docker run hello-world
+     sleep 1
+     echo -e "Bağımlılıklar Yükleniyor"
+     sudo apt install –f 
 else 
     echo -e "Docker Güncelleme Yapılmadı!!!\n "
 fi 

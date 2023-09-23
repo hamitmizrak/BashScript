@@ -80,7 +80,9 @@ then
      #sudo su
 
      sudo apt install maven
-
+     sleep 1
+     echo -e "Bağımlılıklar Yükleniyor"
+     sudo apt install –f 
      #cd /usr/local 
      #sudo wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
      #sudo tar xzf apache-maven-3.6.3-bin.tar.gz 
