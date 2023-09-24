@@ -97,7 +97,7 @@ then
     sudo apt install net-tools
     sudo apt-get install nginx -y
     sudo apt install curl -y
-    sudo apt install nodejs
+    sudo apt install nodejs -y
     node -v
     npm -v
 else
@@ -119,6 +119,8 @@ then
 	sudo ufw allow 9000
 	sudo ufw allow 9090
 	sudo ufw allow 8080
+	sudo ufw allow 5432
+	sudo ufw allow 3306
 	sudo ufw allow 1111
 	sudo ufw allow 2222
 	sudo ufw allow 3333
