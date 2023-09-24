@@ -63,6 +63,15 @@ then
 	# JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"             
 	# vim deneme2.sh  #-s <(echo -e "/foo/\ndd\n:wq")
 	echo -e "#Java Home\nJAVA_HOME=\"/usr/lib/jvm/java-11-openjdk-amd64/bin/\" " >> ~/.bashrc 
+	# sudo apt-get update
+    #sudo apt-get upgrade -y
+
+    #sudo apt-get install wget unzip -y
+    #sudo apt-get install openjdk-17-jdk -y
+    #sudo apt-get install openjdk-17-jre -y
+    #sudo update-alternatives --config java
+    #java -version
+ 
 
      echo $JAVA_HOME
 	# java version

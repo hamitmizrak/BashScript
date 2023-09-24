@@ -92,6 +92,7 @@ then
      #MAVEN_HOME=/usr/local/maven
      #PATH=${M2_HOME}/bin:${PATH}
      #sudo rm -rf /etc/profile.d/maven.sh
+	 ### echo -e "#Java Home\nJAVA_HOME=\"/usr/lib/jvm/java-11-openjdk-amd64/bin/\" " >> ~/.bashrc 
      #echo -e "#Maven Home\n export" ${JAVA_HOME}\n" | sudo tee --append /etc/profile.d/maven.sh
      #echo -e "export" ${M2_HOME}\n" | sudo tee --append /etc/profile.d/maven.sh
      #echo -e "export" ${MAVEN_HOME}\n" | sudo tee --append /etc/profile.d/maven.sh

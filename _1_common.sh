@@ -26,7 +26,9 @@ then
    sudo chmod +x _4_JDK.sh
    sudo chmod +x _5_Maven.sh
    sudo chmod +x _6_Docker.sh
-   sudo chmod +x _7_AllVersion.sh
+   sudo chmod +x _7_Postgresql.sh
+   sudo chmod +x _8_SonarQube.sh
+   sudo chmod +x _14_AllVersion.sh
    echo -e "Çalıştırmak ./_1_common.sh"  
 else
      echo -e "apt-get Update List Güncelleme Yapılmadı!!!\n "   

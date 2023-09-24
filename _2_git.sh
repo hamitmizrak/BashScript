@@ -19,7 +19,7 @@ read -p "Güncelleme istiyor musunuz  E/H ? " updatedResult
 if [[ $updatedResult == "E" || $updatedResult == "e"  ]]
 then
     echo -e "Güncelleme Başlandı... "  
-    sudo apt-get update && sudoa apt-get upgrade -y
+    sudo apt-get update && sudo apt-get upgrade -y
 else
      echo -e "apt-get Update List Güncelleme Yapılmadı!!!\n "   
 fi
