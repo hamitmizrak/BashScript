@@ -63,6 +63,18 @@ if [[ $installingResult == "E" || $installingResult == "e"  ]]
 then
 echo -e "###### Yükleme Başlandı... ###### "
 sudo ufw allow 9000
+
+sleep 2
+sudo sysctl -w vm.max_map_count=524288
+sudo sysctl -w fs.file-max=131072
+sudo ulimit -n 131072
+sudo ulimit -u 8192
+sudo ufw allow 9000
+
+sleep 2
+#echo -e "#SonarQube Home\nsonarqube   -   nofile   65536\nsonarqube   -   nproc    4096  " >> /etc/security/limits.conf
+echo -e "#SonarQube Home\nsonarqube   -   nofile   65536\nsonarqube   -   nproc    4096  " | sudo tee --append /etc/security/limits.conf
+
 cd /tmp
 sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.0.65466.zip
 sudo unzip sonarqube-9.9.0.65466.zip -d /opt
